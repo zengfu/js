@@ -33,8 +33,8 @@ require(['marked', 'highlight'], function (marked,highlight){
       },
       methods:{
         tab_handle:function(e){
-          console.log("tab"+e);
            e.preventDefault();
+           this.message=this.message+'    ';
         }
       }
   	  
