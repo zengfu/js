@@ -14,19 +14,31 @@ require(['marked', 'highlight'], function (marked,highlight){
 	});
 	
 	console.log(marked(markdownString));
+  var app3=new Vue({
+    el:'#app-3',
+    data:{
+      ok:true,
+
+    }
+  })
 	var app6 = new Vue({
   		el: '#app-6',
-  		data: {
-    	message: "hello"
-  	},
-  	  updated : function () {
-  	console.log(markdownString)
-    console.log('row:'+(app6.message));
-    var str=app6.message;
-  	console.log('marked:'+marked(str));
-  	  document.getElementById('content').innerHTML =
-      marked(str);
-  }
+  		data:{
+        message:""
+
+      } ,
+      updated:function(){
+        document.getElementById('content').innerHTML =
+          marked(this.message);
+      },
+      methods:{
+        tab_handle:function(e){
+          console.log("tab"+e);
+           e.preventDefault();
+        }
+      }
+  	  
+
 })  
 	
 	//console.log(marked((app6.message)));
